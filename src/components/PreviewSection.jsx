@@ -1,5 +1,4 @@
-// src/components/PreviewSection.jsx
-import React from 'react';
+import React from 'react'
 
 export const PreviewSection = ({
   collegeName, collegePlace, departmentName, logo,
@@ -50,5 +49,5 @@ export const PreviewSection = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

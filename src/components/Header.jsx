@@ -14,5 +14,5 @@ export const Header = () => {
         <h1 className="hover:text-white">Developed by Aditya</h1>
       </a>
     </header>
-  );
-};
+  )
+}

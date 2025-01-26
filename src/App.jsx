@@ -1,9 +1,8 @@
-// src/App.jsx
-import React, { useState, useRef, useEffect } from "react";
-import { jsPDF } from "jspdf";
-import { Header } from "./components/Header";
-import { InputField } from "./components/InputField";
-import { PreviewSection } from "./components/PreviewSection";
+import React, { useState, useRef, useEffect } from "react"
+import { jsPDF } from "jspdf"
+import { Header } from "./components/Header"
+import { InputField } from "./components/InputField"
+import { PreviewSection } from "./components/PreviewSection"
 
 function App() {
   const [formData, setFormData] = useState({
@@ -21,33 +20,33 @@ function App() {
     submittedTo: "Submitted To:",
     profName: "Miss. Payal Kapadia",
     designation: "Assistant Director",
-    logo: null
-  });
+    logo: "src/assets/sru-logo.png"
+  })
 
-  const previewRef = useRef(null);
+  const previewRef = useRef(null)
 
   const handleInputChange = (key) => (e) => {
     setFormData(prev => ({
       ...prev,
       [key]: e.target.value
-    }));
-  };
+    }))
+  }
 
   const handleLogoUpload = (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files[0]
     if (file && file.type.startsWith("image/")) {
-      const reader = new FileReader();
+      const reader = new FileReader()
       reader.onload = (event) => {
         setFormData(prev => ({
           ...prev,
           logo: event.target.result
-        }));
-      };
-      reader.readAsDataURL(file);
+        }))
+      }
+      reader.readAsDataURL(file)
     } else {
-      alert("Please upload a valid image file");
+      alert("Please upload a valid image file")
     }
-  };
+  }
 
   const generatePDF = () => {
     const doc = new jsPDF("portrait", "pt", "a4")
@@ -153,7 +152,7 @@ function App() {
         Download PDF
       </button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
