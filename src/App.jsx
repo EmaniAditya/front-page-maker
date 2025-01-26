@@ -21,7 +21,7 @@ function App() {
     submittedTo: "Submitted To:",
     profName: "Miss. Payal Kapadia",
     designation: "Assistant Director",
-    logo: import.meta.env.BASE_URL + "sru-logo.png"
+    logo: "/logo.png"
   })
 
   const handleInputChange = (key) => (e) => {
