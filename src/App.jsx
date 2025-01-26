@@ -3,7 +3,6 @@ import { jsPDF } from "jspdf"
 import { Header } from "./components/Header"
 import { InputField } from "./components/InputField"
 import { PreviewSection } from "./components/PreviewSection"
-// import logoPath from '/sru-logo.png'
 
 
 function App() {
@@ -22,7 +21,7 @@ function App() {
     submittedTo: "Submitted To:",
     profName: "Miss. Payal Kapadia",
     designation: "Assistant Director",
-    logo: "/sru-logo.png"
+    logo: import.meta.env.BASE_URL + "sru-logo.png"
   })
 
   const previewRef = useRef(null)
