@@ -142,13 +142,6 @@ function App() {
           />
           <input 
             type="text" 
-            value={subjectName}
-            onChange={(e) => setSubjectName(e.target.value)}
-            placeholder="Subject Name"
-            className="border border-gray-300 rounded px-4 py-2"
-          />
-          <input 
-            type="text" 
             value={yourName}
             onChange={(e) => setYourName(e.target.value)}
             placeholder="Name:"
