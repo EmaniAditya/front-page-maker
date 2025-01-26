@@ -3,6 +3,8 @@ import { jsPDF } from "jspdf"
 import { Header } from "./components/Header"
 import { InputField } from "./components/InputField"
 import { PreviewSection } from "./components/PreviewSection"
+// import logoPath from '/sru-logo.png'
+
 
 function App() {
   const [formData, setFormData] = useState({
@@ -20,7 +22,7 @@ function App() {
     submittedTo: "Submitted To:",
     profName: "Miss. Payal Kapadia",
     designation: "Assistant Director",
-    logo: "src/assets/sru-logo.png"
+    logo: "/sru-logo.png"
   })
 
   const previewRef = useRef(null)
