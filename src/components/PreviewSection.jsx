@@ -6,8 +6,7 @@ export const PreviewSection = ({
   submittedBy, yourName, enrollNo, rollNo,
   submittedTo, profName, designation
 }) => {
-  return (
-    <div 
+  return <div 
       id="preview"
       className="w-full max-w-[21cm] mx-auto bg-white p-8 shadow-lg"
       style={{
@@ -16,10 +15,10 @@ export const PreviewSection = ({
         border: "1px solid #ccc"
       }}
     >
-      <div className="text-center mt-16">
+      <div className="text-center mt-26">
         <h1 className="text-2xl font-bold">{collegeName}</h1>
         <h2 className="text-lg">{collegePlace}</h2>
-        <h3 className="text-xl font-semibold mt-2">{departmentName}</h3>
+        <h3 className="text-xl font-semibold mt-4">{departmentName}</h3>
         
         {logo && (
           <img 
@@ -48,6 +47,5 @@ export const PreviewSection = ({
           </div>
         </div>
       </div>
-    </div>
-  )
+  </div>
 }

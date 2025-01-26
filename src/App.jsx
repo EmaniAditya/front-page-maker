@@ -7,24 +7,22 @@ import { PreviewSection } from "./components/PreviewSection"
 
 function App() {
   const [formData, setFormData] = useState({
-    collegeName: "SHRI RAWATPURA SARKAR UNIVERSITY",
-    collegePlace: "RAIPUR (C.G.)",
-    departmentName: "Department of Computer Science & Engineering",
+    collegeName: "Example University",
+    collegePlace: "India",
+    departmentName: "Computer Science & Engineering",
     purpose: "Project File",
-    subjectName: "Unix and Shell Programming",
+    subjectName: "Natural Language Processing lab",
     subjectCode: "(BENCS504T)",
-    sem: "B.Tech.(CSE) - 5th Semester",
+    sem: "Btech -CSE 7th Sem",
     submittedBy: "Submitted By:",
-    yourName: "Name: E S Aaditya Reddy",
-    enrollNo: "Enroll No : SRUAC2188",
-    rollNo: "Roll No : W2302537",
+    yourName: "Name: Aditya Emani",
+    enrollNo: "Enroll No : CSE701",
+    rollNo: "Roll No : 701",
     submittedTo: "Submitted To:",
     profName: "Miss. Payal Kapadia",
     designation: "Assistant Director",
     logo: import.meta.env.BASE_URL + "sru-logo.png"
   })
-
-  const previewRef = useRef(null)
 
   const handleInputChange = (key) => (e) => {
     setFormData(prev => ({
@@ -110,13 +108,11 @@ function App() {
     doc.save(`${formData.subjectName} front page.pdf`)
   }
 
-  return (
-    <div className="min-h-screen bg-gray-100 pt-20">
+  return<div className="min-h-screen bg-gray-100 pt-20">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Input Section */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="grid md:grid-cols-2 gap-4">
               {Object.keys(formData)
@@ -139,21 +135,20 @@ function App() {
             </div>
           </div>
 
-          {/* Preview Section */}
           <div className="overflow-auto">
             <PreviewSection {...formData} />
           </div>
         </div>
       </div>
-
-      <button
-        onClick={generatePDF}
-        className="w-full mt-4 bg-blue-300 text-white py-2 rounded-md hover:bg-blue-700 transition"
-      >
-        Download PDF
-      </button>
+      <div className="fixed bottom-0 w-full">
+        <button
+          onClick={generatePDF}
+          className="w-full mt-4 bg-yellow-300 text-black text-lg font-bold py-2 rounded-md hover:bg-blue-500 hover:text-white transition"
+        >
+          Download PDF
+        </button>
+      </div>
     </div>
-  )
 }
 
 export default App
