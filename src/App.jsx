@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-8">
-        // inputs
+        {/* // inputs */}
         <div className="grid gap-4 mb-8">
           <input
             type="text"
@@ -139,7 +139,7 @@ function App() {
           />
         </div>
 
-        // preview
+        {/* // preview */}
         <div className="border border-gray-300 p-6 rounded-lg shadow-md bg-white">
           <div className="text-center">
             <h1 className="text-2xl font-bold">{collegeName}</h1>
