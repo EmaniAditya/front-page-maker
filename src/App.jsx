@@ -21,10 +21,7 @@ function App() {
     const file = e.target.files[0]
     if (file && file.type.startsWith("image/")) {
       const reader = new FileReader()
-      reader.onload = (event) => {
-        setLogo(event.target.result)
-      }
-      reader.readAsDataURL(file)
+      reader.onload = (e) => setLogo(e.target.result)
     } else {
       alert("Please upload a valid image file")
     }
