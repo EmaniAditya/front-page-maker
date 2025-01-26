@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import html2pdf from 'html2pdf.js'
 
 function App() {
   const [collegeName, setCollegeName] = useState('SHRI RAWATPURA SARKAR UNIVERSITY')
@@ -30,6 +31,15 @@ function App() {
       setLogo(URL.createObjectURL(file))
     }
   }
+
+
+  const handleDownload = () => {
+    const element = document.querySelector('.preview')
+    html2pdf()
+    .from(element)
+    .save(`${subjectName}-front-page.pdf`)
+  }
+
   return <div className='flex grid grid-cols-2'>
     <div>
       <div>
@@ -57,7 +67,7 @@ function App() {
         type="file" 
         accept='image/' 
         placeholder="upload logo"/>
-        {logo && <img src="logo" alt="College Logo" width="100"/>}
+        {logo && <img src={logo} alt="College Logo" width="100"/>}
       </div>
       <div>
         <input 
@@ -170,7 +180,7 @@ function App() {
       </div>
     </div>
     <div>
-        <button onClick={""}>Download PDF</button>
+        <button onClick={handleDownload}>Download PDF</button>
     </div>
   </div>
 }
