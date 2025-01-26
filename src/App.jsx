@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import html2pdf from 'html2pdf.js'
+
 
 function App() {
   const [collegeName, setCollegeName] = useState("SHRI RAWATPURA SARKAR UNIVERSITY")
@@ -28,8 +30,25 @@ function App() {
     }
   }
 
-  return <div>
-    <header className="flex justify-around">
+  const generatePDF = () => {
+    console.log('button clicked');
+    const element = document.getElementById('preview')
+    if(!element) {
+      console.log('preview not found');
+    }
+    const options = {
+      margin: 0.5,
+      filename: `${subjectName} front page.pdf`,
+      // image: {type: 'jpeg', quality: 0.98},
+      html2canvas: {scale: 2},
+      jsPDF: {unit: 'in', format: 'a4', orientation: 'potrait'}
+    }
+
+    html2pdf().from(element).set(options).save()
+  }
+
+  return <div style={{ fontFamily: "Arial, sans-serif", margin: 0, padding: 0 }}>
+  <header className="flex justify-around">
       <p>Fornt Page Maker</p>
       <p>Developed by Aditya</p>
     </header>
@@ -142,8 +161,22 @@ function App() {
         />
       </div>
 
+      <button
+        onClick={generatePDF}
+        className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+      >
+        Download PDF
+      </button>
+
+
       {/* // preview */}
-      <div className="border border-gray-300 p-6 rounded-lg shadow-md bg-white">
+      <div id="preview" className="border border-gray-300 p-6 rounded-lg shadow-md bg-white" 
+      style={{
+        width: "21cm",
+        height: "29.7cm",
+        padding: "2cm",
+        boxSizing: "border-box",
+      }}>
         <div className="text-center">
           <h1 className="text-2xl font-bold">{collegeName}</h1>
           <h2 className="text-lg">{collegePlace}</h2>
