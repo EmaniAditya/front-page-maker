@@ -35,16 +35,25 @@ function App() {
     const element = document.getElementById('preview')
     if(!element) {
       console.log('preview not found');
+      return;  // Exit early if the preview element is not found
     }
+  
+    console.log('Preview element found');
+
+
     const options = {
       margin: 0.5,
       filename: `${subjectName} front page.pdf`,
       // image: {type: 'jpeg', quality: 0.98},
       html2canvas: {scale: 2},
-      jsPDF: {unit: 'in', format: 'a4', orientation: 'potrait'}
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     }
 
-    html2pdf().from(element).set(options).save()
+    html2pdf().from(element).set(options).save().then(() => {
+      console.log('pdf generated');
+    }).catch((error) => {
+      console.log('errpr generating pdf: ', error);
+    })
   }
 
   return <div style={{ fontFamily: "Arial, sans-serif", margin: 0, padding: 0 }}>
@@ -174,7 +183,7 @@ function App() {
       style={{
         width: "21cm",
         height: "29.7cm",
-        padding: "2cm",
+        padding: "1cm",
         boxSizing: "border-box",
       }}>
         <div className="text-center">
