@@ -143,7 +143,7 @@ function App() {
       <div className="fixed bottom-0 w-full">
         <button
           onClick={generatePDF}
-          className="w-full mt-4 bg-yellow-300 text-black text-lg font-bold py-2 rounded-md hover:bg-blue-500 hover:text-white transition"
+          className="w-full mt-4 bg-cyan-500 text-black text-lg font-bold py-2 rounded-md hover:bg-blue-500 hover:text-white transition"
         >
           Download PDF
         </button>
