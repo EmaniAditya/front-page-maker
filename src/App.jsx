@@ -104,7 +104,7 @@ function App() {
   };
 
   return (
-    <div className='min-h-screen bg-gray-100 pt-20'>
+    <div className='min-h-screen bg-gray-500 pt-15 pb-15'>
       <Header />
 
       <div className='container mx-auto px-4 py-8'>
@@ -133,7 +133,7 @@ function App() {
       <div className='fixed bottom-0 w-full'>
         <button
           onClick={generatePDF}
-          className='w-full mt-4 bg-cyan-500 text-black text-lg font-bold py-2 rounded-md hover:bg-blue-500 hover:text-white transition'
+          className='w-full bg-cyan-500 text-black text-lg font-bold py-2 rounded-md hover:bg-blue-500 hover:text-white transition'
         >
           Download PDF
         </button>

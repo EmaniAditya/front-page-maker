@@ -15,7 +15,7 @@ export const PreviewSection = ({
   profName,
 }) => {
   return (
-    <div className='w-full max-w-[21cm] max-h-[29.7cm] mx-auto bg-white p-8 shadow-lg border border-gray-300 font-bold'>
+    <div className='rounded-lg w-full max-w-[21cm] max-h-[29.7cm] mx-auto bg-white p-8 shadow-lg border border-gray-300 font-bold'>
       <div className='text-center space-y-6'>
         <h1 className='text-2xl'>{collegeName}</h1>
         <h2 className='text-lg'>{collegePlace}</h2>
