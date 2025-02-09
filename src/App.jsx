@@ -6,17 +6,16 @@ import { PreviewSection } from './components/PreviewSection';
 import countapi from 'countapi-js';
 
 function App() {
-
   useEffect(() => {
-    countapi.hit('emaniaditya.github.io', 'front-page-maker')
-      .then((result) => {
+    countapi
+      .hit('emaniaditya.github.io', 'front-page-maker')
+      .then(result => {
         console.log('Total visitors:', result.value);
       })
-      .catch((error) => {
+      .catch(error => {
         console.error('Error tracking visitors:', error);
       });
   }, []);
-
 
   const [formData, setFormData] = useState({
     collegeName: 'YOUR COLLEGE NAME HERE',
