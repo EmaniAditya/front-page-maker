@@ -13,6 +13,7 @@ Students often struggle with creating standardized project front pages, especial
 ## Solution
 
 The **Front Page Maker** offers a streamlined platform to generate professional front pages with:
+
 - **One-click PDF generation**
 - **Mobile and desktop compatibility**
 - **Simple, intuitive interface**
@@ -38,17 +39,20 @@ The **Front Page Maker** offers a streamlined platform to generate professional 
 ## Setup
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/emaniaditya/front-page-maker.git
    cd front-page-maker
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start development server:
+
    ```bash
    npm run dev
    ```
@@ -71,6 +75,7 @@ The **Front Page Maker** offers a streamlined platform to generate professional 
 5. Create pull request
 
 ## Developed by Aditya
+
 - **GitHub**: [@emaniaditya](https://github.com/emaniaditya)
 - **Email**: esaadityareddy@gmail.com
 
