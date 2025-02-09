@@ -50,8 +50,7 @@ function App() {
     const pageWidth = doc.internal.pageSize.width;
     const pageHeight = doc.internal.pageSize.height;
     const marginX = 50;
-    let currentY = 120; 
-
+    let currentY = 120;
 
     doc.setFontSize(20);
     doc.setFont('helvetica', 'bold');
@@ -62,19 +61,15 @@ function App() {
     doc.text(formData.collegePlace, pageWidth / 2, currentY, { align: 'center' });
     currentY += 40;
 
-
     doc.setFontSize(14);
     doc.text(formData.departmentName, pageWidth / 2, currentY, { align: 'center' });
     currentY += 30;
 
-    
-    
     if (formData.logo) {
       const imgSize = 80;
       doc.addImage(formData.logo, 'JPEG', (pageWidth - imgSize) / 2, currentY, imgSize, imgSize);
       currentY += imgSize + 60;
     }
-
 
     doc.setFontSize(18);
     doc.text(formData.purpose, pageWidth / 2, currentY, { align: 'center' });
@@ -89,12 +84,10 @@ function App() {
     doc.text(formData.sem, pageWidth / 2, currentY, { align: 'center' });
     currentY += 80;
 
-
     const remainingSpace = pageHeight - currentY;
     const submittedBlockHeight = 100;
     currentY = currentY + (remainingSpace - submittedBlockHeight) / 2;
 
-    
     doc.setFontSize(12);
     const leftX = marginX;
     const rightX = pageWidth - marginX;
