@@ -1,10 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { jsPDF } from 'jspdf';
 import { Header } from './components/Header';
 import { InputField } from './components/InputField';
 import { PreviewSection } from './components/PreviewSection';
+import countapi from 'countapi-js';
 
 function App() {
+  useEffect(() => {
+    countapi
+      .hit('emaniaditya.github.io', 'front-page-maker')
+      .then(result => {
+        console.log('Total visitors:', result.value);
+      })
+      .catch(error => {
+        console.error('Error tracking visitors:', error);
+      });
+  }, []);
+
   const [formData, setFormData] = useState({
     collegeName: 'YOUR COLLEGE NAME HERE',
     collegePlace: 'PLACE HERE',
@@ -104,7 +116,7 @@ function App() {
   };
 
   return (
-    <div className='min-h-screen bg-gray-500 pt-15 pb-15'>
+    <div className='min-h-screen bg-gray-500 pt-20 pb-10'>
       <Header />
 
       <div className='container mx-auto px-4 py-8'>
