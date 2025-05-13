@@ -78,7 +78,7 @@ function App() {
     currentY += 30;
 
     if (formData.logo) {
-      const imgSize = 80;
+      const imgSize = 120; // Increased from 80 to 120 for bigger logo
       doc.addImage(formData.logo, 'JPEG', (pageWidth - imgSize) / 2, currentY, imgSize, imgSize);
       currentY += imgSize + 60;
     }
