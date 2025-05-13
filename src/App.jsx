@@ -18,19 +18,19 @@ function App() {
   }, []);
 
   const [formData, setFormData] = useState({
-    collegeName: 'YOUR COLLEGE NAME HERE',
-    collegePlace: 'PLACE HERE',
-    departmentName: 'Department of So & So...',
+    collegeName: 'SHRI RAWATPURA SARKAR UNIVERSITY',
+    collegePlace: 'Raipur, CG.',
+    departmentName: 'Department of Computer Science & Engineering',
     purpose: 'Project File',
-    subjectName: 'Natural Language Processing - NLP',
-    subjectCode: '(492001) *subject code',
-    sem: 'B.Tech.(CSE) - 7th Sem',
+    subjectName: 'Artificial Intelligence Lab',
+    subjectCode: 'BENCS603P',
+    sem: 'B.Tech.(CSE) - 6th Sem',
     submittedBy: 'Submitted By:',
-    yourName: 'Name: E S Aaditya Reddy',
-    enrollNo: 'Enroll No : SRUAC2188',
-    rollNo: 'Roll Number : W2302537',
+    yourName: 'Name: ',
+    enrollNo: 'Enroll No : ',
+    rollNo: 'Roll Number : ',
     submittedTo: 'Submitted To:',
-    profName: 'Miss. Payal Kapadia',
+    profName: 'Dr. Ranu Pandey',
     logo: import.meta.env.BASE_URL + 'logo.png',
   });
 
