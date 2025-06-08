@@ -1,21 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { jsPDF } from 'jspdf';
 import { Header } from './components/Header';
 import { InputField } from './components/InputField';
 import { PreviewSection } from './components/PreviewSection';
-import countapi from 'countapi-js';
 
 function App() {
-  useEffect(() => {
-    countapi
-      .hit('emaniaditya.github.io', 'front-page-maker')
-      .then(result => {
-        console.log('Total visitors:', result.value);
-      })
-      .catch(error => {
-        console.error('Error tracking visitors:', error);
-      });
-  }, []);
+  // Firebase visitor counter is handled in the Header component
 
   const [formData, setFormData] = useState({
     collegeName: 'SHRI RAWATPURA SARKAR UNIVERSITY',
@@ -116,9 +106,9 @@ function App() {
   };
 
   return (
-    <div className='min-h-screen bg-gray-500 pt-20 pb-10'>
+    <div className='min-h-screen bg-gray-100 p-4'>
       <Header />
-
+      
       <div className='container mx-auto px-4 py-8'>
         <div className='grid md:grid-cols-2 gap-8'>
           <div className='bg-white p-6 rounded-lg shadow-md'>

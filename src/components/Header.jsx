@@ -1,23 +1,30 @@
 import { useState, useEffect } from 'react';
-import countapi from 'countapi-js';
+import { updateVisitorCount, getVisitorCount } from '../firebase';
 
 export const Header = () => {
   const [visitorCount, setVisitorCount] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    countapi
-      .get('emaniaditya.github.io', 'front-page-maker')
-      .then(result => {
-        setVisitorCount(result.value); 
-      })
-      .catch(error => {
-        console.error('Error fetching visitor count:', error);
-        setVisitorCount('N.A'); 
-      })
-      .finally(() => {
+    // Update and get the visitor count
+    const updateCount = async () => {
+      try {
+        // First update the count
+        await updateVisitorCount();
+        
+        // Then get the updated count
+        getVisitorCount((count) => {
+          setVisitorCount(count);
+          setIsLoading(false);
+        });
+      } catch (error) {
+        console.error('Error with visitor counter:', error);
+        setVisitorCount('N/A');
         setIsLoading(false);
-      });
+      }
+    };
+
+    updateCount();
   }, []);
 
   return (
