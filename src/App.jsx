@@ -5,8 +5,6 @@ import { InputField } from './components/InputField';
 import { PreviewSection } from './components/PreviewSection';
 
 function App() {
-  // Firebase visitor counter is handled in the Header component
-
   const [formData, setFormData] = useState({
     collegeName: 'SHRI RAWATPURA SARKAR UNIVERSITY',
     collegePlace: 'Raipur, CG.',
