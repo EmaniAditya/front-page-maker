@@ -10,6 +10,11 @@ npm install
 npm run dev
 ```
 
+## Deploy
+```bash
+npm run deploy
+```
+
 Built with React, Tailwind CSS and jsPDF.
 
 ---
